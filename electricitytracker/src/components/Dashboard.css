@@ -1,0 +1,38 @@
+.dashboard {
+  padding: 2rem;
+  background: #F6F8FB;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2F80ED;
+  margin: 0.5rem 0;
+}
+
+.stat-change {
+  color: #4CAF50;
+  font-size: 0.9rem;
+}
+
+.usage-chart {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  min-height: 400px;
+} 
