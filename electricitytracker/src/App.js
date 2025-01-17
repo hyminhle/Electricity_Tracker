@@ -7,7 +7,8 @@ import {
   faCalendar, 
   faFileAlt, 
   faCog,
-  faTable
+  faTable,
+  faUpload
 } from '@fortawesome/free-solid-svg-icons';
 import FileUpload from './components/FileUpload';
 import './App.css';
@@ -17,8 +18,49 @@ function App() {
 
   const renderContent = () => {
     switch(currentTab) {
-      case 'graph':
+      case 'upload':
         return <FileUpload />;
+      
+      case 'graph':
+        return (
+          <div className="empty-container">
+            <h2>Graph Analysis</h2>
+            <p>Graph visualization will appear here</p>
+          </div>
+        );
+      
+      case 'map':
+        return (
+          <div className="empty-container">
+            <h2>Map View</h2>
+            <p>Map visualization will appear here</p>
+          </div>
+        );
+      
+      case 'calendar':
+        return (
+          <div className="empty-container">
+            <h2>Calendar</h2>
+            <p>Calendar view will appear here</p>
+          </div>
+        );
+      
+      case 'report':
+        return (
+          <div className="empty-container">
+            <h2>Reports</h2>
+            <p>Reports will appear here</p>
+          </div>
+        );
+      
+      case 'settings':
+        return (
+          <div className="empty-container">
+            <h2>Settings</h2>
+            <p>Settings options will appear here</p>
+          </div>
+        );
+
       case 'dashboard':
       default:
         return (
@@ -33,17 +75,26 @@ function App() {
                   <FontAwesomeIcon icon={faChartLine} size="3x" />
                 </div>
                 
-                <div className="map-section">
+                <div 
+                  className="map-section clickable"
+                  onClick={() => setCurrentTab('map')}
+                >
                   <h2>Map</h2>
                   <FontAwesomeIcon icon={faMap} size="3x" />
                 </div>
                 
-                <div className="calendar-section">
+                <div 
+                  className="calendar-section clickable"
+                  onClick={() => setCurrentTab('calendar')}
+                >
                   <h2>Calendar</h2>
                   <FontAwesomeIcon icon={faCalendar} size="3x" />
                 </div>
                 
-                <div className="report-section">
+                <div 
+                  className="report-section clickable"
+                  onClick={() => setCurrentTab('report')}
+                >
                   <h2>Report</h2>
                   <FontAwesomeIcon icon={faFileAlt} size="3x" />
                 </div>
@@ -95,6 +146,13 @@ function App() {
             title="Graph"
           >
             <FontAwesomeIcon icon={faChartLine} />
+          </button>
+          <button 
+            onClick={() => setCurrentTab('upload')}
+            className={currentTab === 'upload' ? 'active' : ''}
+            title="Upload Files"
+          >
+            <FontAwesomeIcon icon={faUpload} />
           </button>
           <button 
             onClick={() => setCurrentTab('map')} 

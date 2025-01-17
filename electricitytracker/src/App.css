@@ -364,3 +364,25 @@ main {
   margin: 8px 0;
   font-size: 14px;
 }
+
+.empty-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  background: #f8f9fd;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.empty-container h2 {
+  color: #2F80ED;
+  margin-bottom: 1rem;
+}
+
+.empty-container p {
+  color: #666;
+  font-size: 1.1rem;
+}
