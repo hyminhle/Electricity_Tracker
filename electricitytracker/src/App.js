@@ -22,26 +22,35 @@ function App() {
       case 'dashboard':
       default:
         return (
-          <>
-            <div className="content-grid">
-              <div className="graph-section">
-                <h2>Graph</h2>
-              </div>
-              
-              <div className="map-section">
-                <h2>Map</h2>
-              </div>
-              
-              <div className="calendar-section">
-                <h2>Calendar</h2>
-              </div>
-              
-              <div className="report-section">
-                <h2>Report</h2>
+          <div className="dashboard-container">
+            <div className="main-grid">
+              <div className="content-grid">
+                <div 
+                  className="graph-section clickable"
+                  onClick={() => setCurrentTab('graph')}
+                >
+                  <h2>Graph</h2>
+                  <FontAwesomeIcon icon={faChartLine} size="3x" />
+                </div>
+                
+                <div className="map-section">
+                  <h2>Map</h2>
+                  <FontAwesomeIcon icon={faMap} size="3x" />
+                </div>
+                
+                <div className="calendar-section">
+                  <h2>Calendar</h2>
+                  <FontAwesomeIcon icon={faCalendar} size="3x" />
+                </div>
+                
+                <div className="report-section">
+                  <h2>Report</h2>
+                  <FontAwesomeIcon icon={faFileAlt} size="3x" />
+                </div>
               </div>
             </div>
 
-            <div className="metrics-panel">
+            <div className="side-panel">
               <div className="alert-box">
                 <h3>Alert - 10/9/24</h3>
                 <p>Detected Outlier Data</p>
@@ -61,7 +70,7 @@ function App() {
                 </div>
               </div>
             </div>
-          </>
+          </div>
         );
     }
   };
